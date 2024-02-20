@@ -24,7 +24,7 @@ export default function NewGoal({ onAddGoal }: NewGoalProps) {
         <input id="goal" type="text" ref={goal} />
       </p>
       <p>
-        <label htmlFor="summary">Ur Goal</label>
+        <label htmlFor="summary">Ur Summary</label>
         <input id="summary" type="text" ref={summary} />
       </p>
       <p>
