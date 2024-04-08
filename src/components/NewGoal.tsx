@@ -10,21 +10,26 @@ export default function NewGoal({ onAddGoal }: NewGoalProps) {
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event?.preventDefault();
 
-    const enteredGoal = goal.current!.value;
-    const enteredSummary = summary.current!.value;
+    // Kiểm tra xem các tham chiếu có tồn tại không và giá trị có được nhập không
+    if (goal.current && summary.current && goal.current.value.trim() && summary.current.value.trim()) {
+      const enteredGoal = goal.current.value;
+      const enteredSummary = summary.current.value;
 
-    event.currentTarget.reset();
-    onAddGoal(enteredGoal, enteredSummary);
+      event.currentTarget.reset();
+      onAddGoal(enteredGoal, enteredSummary);
+    } else {
+      console.error('Please enter both goal and summary.');
+    }
   }
 
   return (
     <form onSubmit={handleSubmit}>
       <p>
-        <label htmlFor="goal">Ur Goal</label>
+        <label htmlFor="goal">Your Goal</label>
         <input id="goal" type="text" ref={goal} />
       </p>
       <p>
-        <label htmlFor="summary">Ur Summary</label>
+        <label htmlFor="summary">Your Summary</label>
         <input id="summary" type="text" ref={summary} />
       </p>
       <p>
