@@ -18,7 +18,7 @@ export default function NewGoal({ onAddGoal }: NewGoalProps) {
       event.currentTarget.reset();
       onAddGoal(enteredGoal, enteredSummary);
     } else {
-      console.error('Please enter both goal and summary.');
+      alert('Please enter both goal and summary');
     }
   }
 
