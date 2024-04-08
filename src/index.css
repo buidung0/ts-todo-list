@@ -9,7 +9,7 @@ html {
 }
 
 body {
-  min-height: 100vh;
+  min-height: 94vh;
   background: linear-gradient(#f0f6f8, #e0e1e7);
 }
 
@@ -33,8 +33,8 @@ header {
 }
 
 img {
-  width: 5rem;
-  height: 5rem;
+  width: 6rem;
+  height: 6rem;
   border-radius: 50%;
 }
 
