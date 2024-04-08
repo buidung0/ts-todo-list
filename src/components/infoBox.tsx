@@ -10,6 +10,7 @@ type WarningBoxProps = {
   severity: 'low' | 'medium' | 'high';
   children: ReactNode;
 };
+
 type InfoBoxProps = HintBoxProps | WarningBoxProps;
 
 export default function InfoBox(props: InfoBoxProps) {
