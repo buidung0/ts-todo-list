@@ -14,6 +14,19 @@ export type CourseGoal = {
 export default function App() {
   const [goals, setGoals] = useState<CourseGoal[]>([]);
 
+  function fetchData() {
+    fetch('https://electronic-device-shop.onrender.com/api/product')
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+      })
+      .catch((error) => {
+        console.error('Error fetching data:', error);
+      });
+  }
+  fetchData();
+  setInterval(fetchData, 300000);
+
   function handleAddGoal(goal: string, summary: string) {
     setGoals((prevGoals) => {
       const newGoal: CourseGoal = {
